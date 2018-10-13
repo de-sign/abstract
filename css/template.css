@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+*{ box-sizing: border-box; }
+html{ font-family: 'Comfortaa', cursive; color: #262626; }
+body{  }
+a{ color: #262626; }
+
+.tpl-row{  }
+.tpl-col{ max-width: 1000px; margin: 0 auto; padding: 10px 20px; }
+
+/*
+.tpl-loading{}
+.tpl-loading .tpl-header,
+.tpl-loading .tpl-header .tpl-column{ height: 100%; white-space: nowrap; }
+.tpl-loading .tpl-header .tpl-column::before{ content: ''; display: inline-block; width: 0; height: 100%; vertical-align: middle; }
+.tpl-loading .tpl-title{ display: inline-block; width: 100%; vertical-align: middle; }
+
+.tpl-logo-square{ display:	inline-block; width: 45px; height: 75px; background-color: #262626; transform: rotate(-60deg) skewX(5deg); }
+.tpl-logo-circle{ display:	inline-block; border-radius: 50%; width: 57px; height: 57px; border: 5px solid #262626;	position: relative;	bottom:	20px; background-color: #fff; right: 15px; }
+*/
+
+/* HEAD */
+#tpl-head{  }
+#tpl-head .tpl-col{ padding: 75px 20px; }
+
+.tpl-tit{ text-align: center; margin: 0; font-size: 3em; }
+
+.tpl-logo{ background-color: #fff; padding:	0 30px; position: relative; }
+.tpl-logo > *{ vertical-align: middle; }
+.tpl-logo-ico{ display: inline-block; padding: 0 15px 0 0; height: 75px; }
+.tpl-logo-square{ display: inline-block; width: 45px; height: 75px; background-color: #262626; transform: rotate(-60deg) skewX(5deg); position: relative; left: 20px; }
+.tpl-logo-circle{ display: inline-block; border-radius: 50%; width: 57px; height: 57px; border: 5px solid #262626; position: relative; bottom: 20px; background-color: #fff; }
+.tpl-logo-txt{ display: inline-block; }
+
+/* CTN */
+#tpl-ctn{ text-align: center; }
+.tpl-itm{ text-align: left; cursor: pointer; background-color: #eee; display: inline-block; width: 300px; height: 300px; vertical-align: middle; margin: 10px; position: relative; }
+.tpl-itm-img{  }
+.tpl-itm-head{ position: absolute; bottom: 0; left: 0; max-width: 100%; }
+.tpl-itm-tit{ margin: 0; background-color: #fff; color: #262626; padding: 5px 10px 0; }
+.tpl-itm-like{ text-align: right; margin: 5px; opacity: 0; }
+.tpl-itm:hover .tpl-itm-tit{ background-color: #262626; color: #fff; }
+.tpl-itm:hover .tpl-itm-like{ opacity: 1; }
+
+/* FOOT */
+#tpl-foot{ background-color: #262626; color: #fff; }
+#tpl-foot a{ color: #fff; text-decoration: none; padding: 2px 5px 0; }
+#tpl-foot a:hover{ color: #262626; background-color: #fff; }
