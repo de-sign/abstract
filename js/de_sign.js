@@ -6,6 +6,7 @@ const DS = {
 	},
 
 	bLoad: true,
+	bTouch: 'ontouchstart' in window || navigator.MaxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
 
 	oFeed: null,
 	aItm: [],
@@ -16,6 +17,8 @@ const DS = {
 	},
 
 	init: function(){
+
+		this.bTouch && document.body.classList.add('tpl-body--touch');
 
 		this.oElm.hTpl = document.getElementById('tpl-itm--tpl');
 		this.oElm.hLs = this.oElm.hTpl.parentNode;
