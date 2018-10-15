@@ -2,7 +2,8 @@ const DS = {
 
 	oCfg: {
 		TOKEN: '5426534248.91b432b.1d5bc723f16f400593277ac603f6f8c2',
-		TAG: '__de_sign'
+		TAG: '__de_sign',
+		LIMIT: 12
 	},
 
 	bLoad: true,
@@ -20,6 +21,15 @@ const DS = {
 
 		this.bTouch && document.body.classList.add('tpl-body--touch');
 
+		window.addEventListener('scroll', function(){
+			var sTopMax = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+			if( !DS.bLoad && sTopMax - document.documentElement.scrollTop < 400 ){
+				DS.bLoad = true;
+				DS.oFeed.next();
+			}
+		}, false);
+
 		this.oElm.hTpl = document.getElementById('tpl-itm--tpl');
 		this.oElm.hLs = this.oElm.hTpl.parentNode;
 		this.oElm.hLs.removeChild(this.oElm.hTpl);
@@ -31,6 +41,7 @@ const DS = {
 			accessToken: this.oCfg.TOKEN,
 			get: 'tagged',
 			tagName: this.oCfg.TAG,
+			limit: this.oCfg.LIMIT,
 			mock: true,
 			success: function(response){
 				response.data.forEach(function(data){
@@ -44,12 +55,7 @@ const DS = {
 	addItm: function(data){
 
 		if(this.bLoad){
-			Array.prototype.forEach.call(
-				this.oElm.hLs.querySelectorAll('.tpl-itm--load'),
-				function(hElm){
-					hElm.parentNode.removeChild(hElm);
-				}
-			);
+			document.body.classList.remove('tpl-body--load');
 			this.bLoad = false;
 		}
 
