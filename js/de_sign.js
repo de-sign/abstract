@@ -64,6 +64,7 @@ const DS = {
 			sTit = data.caption.text.split('\n')[0].split(' - ')[1],
 			sLike = data.likes.count ? data.likes.count + ' like' + ( data.likes.count > 1 ? 's' : '' ) : '&nbsp;';
 
+		hImg.alt = data.caption.text;
 		hImg.src = data.images.low_resolution.url;
 		hImg.width = data.images.low_resolution.width;
 		hImg.height = data.images.low_resolution.height;
