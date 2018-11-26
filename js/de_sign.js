@@ -3,6 +3,7 @@ const DS = {
 	oCfg: {
 		TOKEN: '5426534248.91b432b.1d5bc723f16f400593277ac603f6f8c2',
 		TAG: '__de_sign',
+		USER: '5426534248',
 		LIMIT: 12
 	},
 
@@ -39,13 +40,15 @@ const DS = {
 
 		this.oFeed = new Instafeed({
 			accessToken: this.oCfg.TOKEN,
-			get: 'tagged',
-			tagName: this.oCfg.TAG,
+			get: 'user',
+			userId: this.oCfg.USER,
 			limit: this.oCfg.LIMIT,
 			mock: true,
 			success: function(response){
 				response.data.forEach(function(data){
-					DS.addItm(data);
+					if( data.tags.indexOf( DS.oCfg.TAG ) != -1 ){
+						DS.addItm(data);
+					}
 				});
 			}
 		});
